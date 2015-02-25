@@ -17,21 +17,27 @@
 
 @implementation AppTableViewController
 
-@synthesize appImg,appNome;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
-    appNome=@[@"quiz",@"fontes",@"contador"];
-    appImg=@[@"quiz.png",@"fontes.png",@"contador.png"];
+    Apps *quiz = [[Apps alloc]initWithNome:@"quiz" andCategoria:@"entretenimento" andDesc:@"bla" andImg:@"quiz.png"];
+    
+    Apps *fontes = [[Apps alloc]initWithNome:@"fontes" andCategoria:@"entretenimento" andDesc:@"bla" andImg:@"fontes.png"];
+    Apps *contador = [[Apps alloc]initWithNome:@"contador" andCategoria:@"utilitarios" andDesc:@"bla" andImg:@"contador.png"];
+    
+    _appTable=[NSMutableArray arrayWithObjects:quiz,fontes,contador,nil];
     
     // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+     self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 }
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -47,7 +53,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.appNome count];
+    return [self.appTable count];
 }
 
 
@@ -56,22 +62,23 @@
     AppTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AppCell" forIndexPath:indexPath];
     
     long row = [indexPath row];
-    
+    Apps *app=_appTable[row];
 
-    cell.appImg.image = [UIImage imageNamed:self.appImg[row]];
-    [cell.appNome setText:self.appNome[row]];
+    cell.appImg.image = [UIImage imageNamed:app.img];
+    [cell.appNome setText:app.nome];
+    [cell.appCat setText:app.categoria];
     return cell;
 }
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -81,21 +88,21 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
 
-/*
+
+
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
 }
-*/
 
-/*
+
+
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
-*/
+
 
 
 #pragma mark - Navigation
@@ -109,7 +116,7 @@
         
         long row =[myIndexPath row];
         
-        appsDetail.appModel=@[appNome[row],appImg[row]];
+        appsDetail.app=_appTable[row];
     }
     
     
@@ -117,5 +124,11 @@
     // Pass the selected object to the new view controller.
 }
 
+
+- (IBAction)editTable:(id)sender {
+
+    [self setEditing:YES];
+
+}
 
 @end

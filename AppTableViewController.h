@@ -9,12 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "AppViewController.h"
 #import "AppTableViewCell.h"
+#import "Apps.h"
 
-@interface AppTableViewController : UITableViewController{
-    NSArray *appNome;
-    NSArray *appImg;
-}
+@interface AppTableViewController : UITableViewController
 
-@property NSArray *appNome,*appImg;
+@property NSMutableArray *appTable;
+- (IBAction)editTable:(id)sender;
 
 @end

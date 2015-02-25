@@ -12,6 +12,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UIImageView *appImg;
+@property (weak, nonatomic) IBOutlet UILabel *appCat;
 
 @property (weak, nonatomic) IBOutlet UILabel *appNome;
 

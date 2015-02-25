@@ -14,14 +14,16 @@
 
 @implementation AppViewController
 
-@synthesize appNome,appImg,appModel;
+@synthesize app;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    appNome.text = appModel[0];
     
-    [appImg setImage:[UIImage imageNamed:appModel[1]]];
+    
+    _appNome.text = app.nome;
+    _appCat.text = app.categoria;
+    [_appImg setImage:[UIImage imageNamed:app.img]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,7 +42,7 @@
 }
 */
 
-//- (IBAction)voltar:(id)sender {
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//}
+- (IBAction)voltar:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

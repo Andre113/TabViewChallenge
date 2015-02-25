@@ -18,6 +18,8 @@
 		5201A1AF1A9E4BD400C0AC5B /* AppTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5201A1AE1A9E4BD400C0AC5B /* AppTableViewCell.m */; };
 		5201A1B11A9E68BE00C0AC5B /* contador.png in Resources */ = {isa = PBXBuildFile; fileRef = 5201A1B01A9E68BE00C0AC5B /* contador.png */; };
 		5201A1B31A9E68C500C0AC5B /* quiz.png in Resources */ = {isa = PBXBuildFile; fileRef = 5201A1B21A9E68C500C0AC5B /* quiz.png */; };
+		5201A1B51A9E726F00C0AC5B /* fontes.png in Resources */ = {isa = PBXBuildFile; fileRef = 5201A1B41A9E726F00C0AC5B /* fontes.png */; };
+		5201A1B81A9E82CF00C0AC5B /* Apps.m in Sources */ = {isa = PBXBuildFile; fileRef = 5201A1B71A9E82CF00C0AC5B /* Apps.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,9 @@
 		5201A1AE1A9E4BD400C0AC5B /* AppTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTableViewCell.m; sourceTree = "<group>"; };
 		5201A1B01A9E68BE00C0AC5B /* contador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contador.png; sourceTree = "<group>"; };
 		5201A1B21A9E68C500C0AC5B /* quiz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quiz.png; sourceTree = "<group>"; };
+		5201A1B41A9E726F00C0AC5B /* fontes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fontes.png; sourceTree = "<group>"; };
+		5201A1B61A9E82CF00C0AC5B /* Apps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Apps.h; sourceTree = "<group>"; };
+		5201A1B71A9E82CF00C0AC5B /* Apps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Apps.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +78,8 @@
 		5201A1751A9E402100C0AC5B = {
 			isa = PBXGroup;
 			children = (
+				5201A1B61A9E82CF00C0AC5B /* Apps.h */,
+				5201A1B71A9E82CF00C0AC5B /* Apps.m */,
 				5201A1801A9E402100C0AC5B /* TabView */,
 				5201A19A1A9E402100C0AC5B /* TabViewTests */,
 				5201A17F1A9E402100C0AC5B /* Products */,
@@ -100,6 +107,7 @@
 				5201A1A71A9E419900C0AC5B /* AppTableViewController.h */,
 				5201A1A81A9E419900C0AC5B /* AppTableViewController.m */,
 				5201A18B1A9E402100C0AC5B /* Main.storyboard */,
+				5201A1B41A9E726F00C0AC5B /* fontes.png */,
 				5201A1B01A9E68BE00C0AC5B /* contador.png */,
 				5201A1B21A9E68C500C0AC5B /* quiz.png */,
 				5201A18E1A9E402100C0AC5B /* Images.xcassets */,
@@ -219,6 +227,7 @@
 				5201A1B31A9E68C500C0AC5B /* quiz.png in Resources */,
 				5201A1B11A9E68BE00C0AC5B /* contador.png in Resources */,
 				5201A1921A9E402100C0AC5B /* LaunchScreen.xib in Resources */,
+				5201A1B51A9E726F00C0AC5B /* fontes.png in Resources */,
 				5201A18F1A9E402100C0AC5B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5201A1AC1A9E41C200C0AC5B /* AppViewController.m in Sources */,
+				5201A1B81A9E82CF00C0AC5B /* Apps.m in Sources */,
 				5201A1871A9E402100C0AC5B /* AppDelegate.m in Sources */,
 				5201A1841A9E402100C0AC5B /* main.m in Sources */,
 				5201A1A91A9E419900C0AC5B /* AppTableViewController.m in Sources */,

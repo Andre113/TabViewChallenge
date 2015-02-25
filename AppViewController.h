@@ -9,14 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "AppTableViewController.h"
 #import "AppTableViewCell.h"
+#import "Apps.h"
 
 @interface AppViewController : UIViewController
 
-@property NSMutableArray *appModel;
+@property Apps *app;
 
 @property (weak, nonatomic) IBOutlet UIImageView *appImg;
 @property (weak, nonatomic) IBOutlet UILabel *appNome;
+@property (weak, nonatomic) IBOutlet UILabel *appCat;
 
 
-//- (IBAction)voltar:(id)sender;
+- (IBAction)voltar:(id)sender;
 @end
