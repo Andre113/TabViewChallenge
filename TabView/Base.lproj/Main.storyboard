@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0pq-Iv-kzU">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--App View Controller-->
@@ -12,14 +14,90 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="App">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cIk-Lh-3Nb">
+                                <rect key="frame" x="115" y="28" width="370" height="260"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cIk-Lh-3Nb" secondAttribute="height" multiplier="301:206" id="eJ1-iu-mBN"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="eJ1-iu-mBN"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="eJ1-iu-mBN"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Descricao" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYz-VE-kCV">
+                                <rect key="frame" x="262" y="433" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Nome do App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gbx-nM-Cy9">
+                                <rect key="frame" x="247" y="331" width="107" height="21"/>
+                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Gbx-nM-Cy9" firstAttribute="top" secondItem="cIk-Lh-3Nb" secondAttribute="bottom" constant="55" id="1K6-0V-bu1">
+                                <variation key="widthClass=compact" constant="30"/>
+                            </constraint>
+                            <constraint firstItem="Gbx-nM-Cy9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Fjk-fe-Xmr"/>
+                            <constraint firstItem="BYz-VE-kCV" firstAttribute="top" secondItem="Gbx-nM-Cy9" secondAttribute="bottom" constant="60" id="UR9-ky-0yE"/>
+                            <constraint firstItem="cIk-Lh-3Nb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="UkN-dv-5oU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BYz-VE-kCV" secondAttribute="trailing" constant="151" id="VLx-Cr-owT">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="BYz-VE-kCV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dK2-ZK-Dzr"/>
+                            <constraint firstItem="cIk-Lh-3Nb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="fJ9-Dg-6aA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cIk-Lh-3Nb" secondAttribute="trailing" id="w8V-aY-bKe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gbx-nM-Cy9" secondAttribute="trailing" id="yeW-Rr-WJd"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="UkN-dv-5oU"/>
+                                <exclude reference="fJ9-Dg-6aA"/>
+                                <exclude reference="w8V-aY-bKe"/>
+                                <exclude reference="1K6-0V-bu1"/>
+                                <exclude reference="Fjk-fe-Xmr"/>
+                                <exclude reference="yeW-Rr-WJd"/>
+                                <exclude reference="UR9-ky-0yE"/>
+                                <exclude reference="VLx-Cr-owT"/>
+                                <exclude reference="dK2-ZK-Dzr"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="UkN-dv-5oU"/>
+                                <include reference="fJ9-Dg-6aA"/>
+                                <include reference="w8V-aY-bKe"/>
+                                <include reference="1K6-0V-bu1"/>
+                                <include reference="Fjk-fe-Xmr"/>
+                                <include reference="yeW-Rr-WJd"/>
+                                <include reference="UR9-ky-0yE"/>
+                                <include reference="VLx-Cr-owT"/>
+                                <include reference="dK2-ZK-Dzr"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="appImg" destination="cIk-Lh-3Nb" id="OEC-vZ-eMF"/>
+                        <outlet property="appNome" destination="Gbx-nM-Cy9" id="7dL-5W-4bu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1921.5" y="347"/>
         </scene>
         <!--App Table View Controller-->
         <scene sceneID="sNj-Tw-I0A">
@@ -30,22 +108,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OQQ-Pq-ESC">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AppCell" id="OQQ-Pq-ESC" customClass="AppTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OQQ-Pq-ESC" id="1qC-0v-Cem">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qga-iT-thX">
-                                            <rect key="frame" x="8" y="-1" width="62" height="43.5"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8V-QI-Iet">
                                             <rect key="frame" x="92" y="8" width="265" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="83" y="8" width="265" height="21"/>
+                                            </variation>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qga-iT-thX">
+                                            <rect key="frame" x="8" y="-1" width="62" height="43.5"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="8" y="0.0" width="62" height="44"/>
+                                            </variation>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="appImg" destination="Qga-iT-thX" id="4Nn-CP-QHw"/>
+                                    <outlet property="appNome" destination="S8V-QI-Iet" id="Oyy-cD-zr8"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="appDetail" id="Y3i-ha-3AG"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -56,7 +145,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5nj-BS-mJp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1016" y="347"/>
+            <point key="canvasLocation" x="990" y="372"/>
         </scene>
     </scenes>
 </document>

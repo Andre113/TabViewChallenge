@@ -8,14 +8,23 @@
 
 #import "AppTableViewController.h"
 
-@interface AppTableViewController ()
+
+@interface AppTableViewController (){
+    
+}
 
 @end
 
 @implementation AppTableViewController
 
+@synthesize appImg,appNome;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+
+    appNome=@[@"quiz",@"fontes",@"contador"];
+    appImg=@[@"quiz.png",@"fontes.png",@"contador.png"];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -32,26 +41,27 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.appNome count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    AppTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AppCell" forIndexPath:indexPath];
     
+    long row = [indexPath row];
+    
+
+    cell.appImg.image = [UIImage imageNamed:self.appImg[row]];
+    [cell.appNome setText:self.appNome[row]];
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -87,14 +97,25 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"appDetail"]) {
+        AppViewController *appsDetail = [segue destinationViewController];
+        NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
+        
+        long row =[myIndexPath row];
+        
+        appsDetail.appModel=@[appNome[row],appImg[row]];
+    }
+    
+    
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppViewController.h"
+#import "AppTableViewCell.h"
 
-@interface AppTableViewController : UITableViewController
+@interface AppTableViewController : UITableViewController{
+    NSArray *appNome;
+    NSArray *appImg;
+}
+
+@property NSArray *appNome,*appImg;
 
 @end

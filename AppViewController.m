@@ -8,21 +8,27 @@
 
 #import "AppViewController.h"
 
-@interface AppViewController ()
 
+@interface AppViewController ()
 @end
 
 @implementation AppViewController
 
+@synthesize appNome,appImg,appModel;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    appNome.text = appModel[0];
+    
+    [appImg setImage:[UIImage imageNamed:appModel[1]]];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
 #pragma mark - Navigation
@@ -34,4 +40,7 @@
 }
 */
 
+//- (IBAction)voltar:(id)sender {
+//    [self dismissViewControllerAnimated:YES completion:nil];
+//}
 @end

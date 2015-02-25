@@ -1,5 +1,5 @@
 //
-//  AppViewController.h
+//  AppTableViewCell.h
 //  TabView
 //
 //  Created by Wellington Pardim Ferreira on 2/25/15.
@@ -7,16 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppTableViewController.h"
-#import "AppTableViewCell.h"
 
-@interface AppViewController : UIViewController
+@interface AppTableViewCell : UITableViewCell
 
-@property NSMutableArray *appModel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *appImg;
+
 @property (weak, nonatomic) IBOutlet UILabel *appNome;
 
 
-//- (IBAction)voltar:(id)sender;
 @end
